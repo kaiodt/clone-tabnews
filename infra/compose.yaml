@@ -6,3 +6,8 @@ services:
       - ../.env.development
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "--host", "localhost"]
+      interval: 1s
+      timeout: 1s
+      retries: 300
