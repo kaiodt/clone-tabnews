@@ -4,5 +4,9 @@
     "next/core-web-vitals",
     "plugin:jest/recommended",
     "prettier"
-  ]
+  ],
+  "plugins": ["no-secrets"],
+  "rules": {
+    "no-secrets/no-secrets": "error"
+  }
 }
