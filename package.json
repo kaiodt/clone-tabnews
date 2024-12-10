@@ -4,7 +4,8 @@
   "description": "Implementação do [https://www.tabnews.com.br](https://www.tabnews.com.br/) para o [https://curso.dev](https://curso.dev/)",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up -- --wait && npm run migrations:up && next dev",
+    "predev": "npm run services:up -- --wait && npm run migrations:up",
+    "dev": "next dev",
     "pretest": "npm run services:up",
     "test": "concurrently -n next,jest --hide next -k -s command-jest \"next dev\" \"jest --runInBand --verbose\"",
     "posttest": "npm run services:stop",
